@@ -9,25 +9,35 @@ class Counter extends StatefulWidget {
 
 class _CounterState extends State<Counter> {
   // state variable
-  String message = 'Hello';
+
+  int count = 0;
+  // methods
+  void update() {
+    setState(() {
+      count++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Counter')),
-      body: Text(message),
+      appBar: AppBar(
+        title: Text('Counter', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Text(
+          'Count = $count',
+          style: TextStyle(
+            fontSize: 26,
+            color: Color.fromARGB(255, 60, 255, 1),
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // debugPrint(message);
-          // แบบที่ 1
-          setState(() {
-            message = (message == 'Hello') ? 'Hi' : 'Hello';
-          });
-          // แบบที่ 2
-          // message = 'Hi';
-          // setState(() {});
-        },
-        child: Text('kot ha mae'),
+        onPressed: update,
+        backgroundColor: Colors.blue,
+        child: Text('kot ha mae', style: TextStyle(color: Colors.white)),
       ),
     );
   }
