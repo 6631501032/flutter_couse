@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_couse/week04/login_app.dart';
-
+import 'package:flutter_couse/week04/calculator_app.dart';
 
 
 void main() {
-  runApp(MaterialApp(home: LoginApp()));
+  runApp(MaterialApp(home: CalculatorApp()));
 }
+
