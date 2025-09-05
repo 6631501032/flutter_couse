@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_couse/week04/getinput_demo.dart';
+import 'package:flutter_couse/week04/login_app.dart';
+
 
 
 void main() {
-  runApp(MaterialApp(home: GetinputDemo(), debugShowCheckedModeBanner: false));
+  runApp(MaterialApp(home: LoginApp()));
 }
