@@ -7,13 +7,9 @@ class SingleChildDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.all(16),
-          padding: EdgeInsets.all(16),
-          color: Colors.amber,
-          width: 150,
-          height: 100,
-          alignment: Alignment.center,
+        child: Align(
+          // alignment is (x,y) 1-<=x<=1, -1<=y<=1 and (0,0) is at the parent' center
+          alignment: Alignment(-0.75, -1),
           child: Text('Single child'))),
     );
   }
