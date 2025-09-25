@@ -35,22 +35,17 @@ class _FishingState extends State<Fishing> {
   int worms = 5;
   String image = 'assets/images/fish/fisherman.png';
   final Random _random = Random();
-  void showicon() {
-    for (int i = 0; i < worms; i++) {
-      Icon(Icons.waves_rounded);
-    }
-  }
 
   void startfishing() {
     setState(() {
       int randomfish = _random.nextInt(fish.length);
       int randomamount = _random.nextInt(10) + 1;
-      if (worms == 0) {
+      if (worms-- == 0) {
         return;
       }
-      worms--;
-      coin = fish[randomfish]['price'] * randomamount;
-      message = '${fish[randomfish]['name']} x $randomamount = $coin';
+      int earned = (fish[randomfish]['price'] as int) * randomamount;
+      coin += earned;
+      message = '${fish[randomfish]['name']}(${fish[randomfish]['price']}) x $randomamount = $earned';
       image = fish[randomfish]['image'];
     });
   }
@@ -59,6 +54,7 @@ class _FishingState extends State<Fishing> {
     setState(() {
       coin = 0;
       worms = 5;
+      message = '';
       image = 'assets/images/fish/fisherman.png';
     });
   }
@@ -76,14 +72,18 @@ class _FishingState extends State<Fishing> {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Worms: $worms')],
+            children: [
+              Text('Worms: '),
+              for (int i = 0; i < worms; i++)
+                Icon(Icons.waves_rounded, size: 40, color: Colors.red),
+            ],
           ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.currency_exchange, color: Colors.yellow),
-              Text('${coin.toString()}'),
+              Text(' ${coin.toString()}'),
             ],
           ),
           Container(
