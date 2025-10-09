@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'fishing6631501032.dart';
+import 'package:flutter_couse/week07/cb_sw_demo.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Fishing()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: CbSwDemo()));
 }
