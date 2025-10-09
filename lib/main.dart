@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_couse/week07/cb_sw_demo.dart';
+import 'package:flutter_couse/week07/slider_demo.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: CbSwDemo()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: SliderDemo()));
 }
