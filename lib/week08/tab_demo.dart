@@ -23,7 +23,13 @@ class _TabDemoState extends State<TabDemo> {
               Tab(icon: Icon(Icons.bike_scooter), text: 'Bike'),
             ],
           ),
-        ),
+        ),bottomNavigationBar: Container(color: Colors.lightGreenAccent,child: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.home), text: 'Home'),
+              Tab(icon: Icon(Icons.train), text: 'Train'),
+              Tab(icon: Icon(Icons.bike_scooter), text: 'Bike'),
+            ],
+          )),
         body: TabBarView(
           children: [
             Container(color: Colors.yellow, child: Text(msg)),
