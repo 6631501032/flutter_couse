@@ -13,7 +13,7 @@ class Page1 extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: FilledButton(
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               // วิธีที่ 1
               // MaterialPageRoute(

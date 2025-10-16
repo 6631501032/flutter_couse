@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_couse/week08/fruit.dart';
-
+import 'package:flutter_couse/week08/page1.dart';
 
 class Page2 extends StatelessWidget {
   // วิธีที่ 2
@@ -35,6 +35,17 @@ class Page2 extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text("Back"),
+          ),
+          FilledButton(
+            onPressed: () {
+              // clear session and remove local storage
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => Page1()),
+                (route) => false,
+              );
+            },
+            child: Text("Logout"),
           ),
         ],
       ),
