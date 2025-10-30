@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'fishing6631501032.dart';
+import 'package:flutter_couse/week10/login.dart';
+
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Fishing()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Login()));
 }
