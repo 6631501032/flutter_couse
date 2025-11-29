@@ -69,6 +69,11 @@ flutter:
     - assets/images/fish/neon-tetra.png
     - assets/images/fish/puffer-fish.png
     - assets/images/fish/shark.png
+    - assets/images/fruit/apple.png
+    - assets/images/fruit/banana.png
+    - assets/images/fruit/batman.png
+    - assets/images/fruit/kiwi.png
+    - assets/images/fruit/orange.png
 
   #   - images/a_dot_ham.jpeg
 
