@@ -22,7 +22,10 @@ class PageviewDemo extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          pageController.jumpToPage(1);
+          pageController.nextPage(
+            duration: const Duration(milliseconds: 300), // ความเร็วในการเลื่อน
+            curve: Curves.easeInOut, // รูปแบบ Animation
+          );
         },
         child: Icon(Icons.arrow_forward),
       ),

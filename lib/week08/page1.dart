@@ -31,6 +31,7 @@ class Page1 extends StatelessWidget {
               //   builder: (context) =>
               //       Page2(name: 'apple', price: 15, date: ['10 Oct', '19 Oct']),
               // ),
+              // วิธีที่ 3
               MaterialPageRoute(
                 builder: (context) =>
                     Page2(fruit: Fruit('apple', 15, ['10 Oct', '19 Oct'])),
