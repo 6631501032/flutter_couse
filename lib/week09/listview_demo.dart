@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 
 class ListViewDemo extends StatelessWidget {
-  const ListViewDemo({super.key});
+  final List data = [
+    {'icon': Icons.map, 'name': 'Map'},
+    {'icon': Icons.album, 'name': 'Album'},
+    {'icon': Icons.phone, 'name': 'Phone'}
+  ];
+
+
+  ListViewDemo({super.key});
 
 
   @override
@@ -11,21 +18,26 @@ class ListViewDemo extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ListView Demo'),
       ),
-      body: ListView(
-        children: const [
-          ListTile(
-            leading: Icon(Icons.map),
-            title: Text('Map'),
-          ),
-          ListTile(
-            leading: Icon(Icons.album),
-            title: Text('Album'),
-          ),
-          ListTile(
-            leading: Icon(Icons.phone),
-            title: Text('Phone'),
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(data[index]['icon']),
+            title: Text(data[index]['name']),
+            subtitle: const Text('Details'),
+            trailing: const Icon(Icons.stars),
+            onTap: () {
+              // remove the previous snackbar if any
+              ScaffoldMessenger.of(context).removeCurrentSnackBar();
+              // show snackbar
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(data[index]['name']),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }
